@@ -1,0 +1,16 @@
+[
+  {
+    "ad_id": "ad_001",
+    "advertiser_name": "Jordan Deals",
+    "ad_text": "اطلب الآن Car Seat Gap Organizer مع توصيل سريع داخل الأردن",
+    "start_time": "2026-05-10T09:30:00",
+    "active": true
+  },
+  {
+    "ad_id": "ad_002",
+    "advertiser_name": "Smart Store",
+    "ad_text": "Keep your car organized with this gap filler",
+    "start_time": "2026-05-10T11:00:00",
+    "active": true
+  }
+]

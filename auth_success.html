@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>UltraAI - Logging in...</title>
+    <style>
+        body { font-family: sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .loader { border: 4px solid #334155; border-top: 4px solid #38bdf8; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <div class="loader"></div>
+        <p>جاري تسجيل الدخول...</p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const user = urlParams.get('user');
+        const market = urlParams.get('market');
+
+        if (token) {
+            localStorage.setItem('ultraai_token', token);
+            localStorage.setItem('ultraai_user', user);
+            localStorage.setItem('ultraai_market', market);
+            window.location.href = '/hunter';
+        } else {
+            window.location.href = '/login?error=token_missing';
+        }
+    </script>
+</body>
+</html>

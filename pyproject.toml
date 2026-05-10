@@ -1,0 +1,26 @@
+[tool.briefcase]
+project_name = "UltraAI"
+bundle = "com.ultraai.hunter"
+
+[tool.briefcase.app.UltraAI]
+formal_name = "UltraAI Product Hunter"
+description = "AI-Powered Product Hunter for Local Markets"
+long_description = """UltraAI helps dropshippers find winning products, scan prices, and generate ad copy automatically."""
+icon = "static/icon-192"
+sources = [
+    "main.py",
+    "auth_system.py",
+    "hunter_routes.py",
+    "secure_api.py",
+    "magic_link_auth.py",
+    "google_auth.py",
+    "ad_creative_generator.py",
+    "duck_product_aggregator.py",
+    "price_scout.py",
+    "profit_ranker.py",
+    "product_purifier.py",
+    "supplier_scout.py",
+    "viral_loop_engine.py",
+    "image_scout.py",
+    "ultraai_pipeline.py",
+]

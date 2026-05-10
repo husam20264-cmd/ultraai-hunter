@@ -1,0 +1,49 @@
+from datetime import datetime
+
+def save_simple_history(product_name, country, score, decision, recommendation):
+    if HISTORY_FILE.exists():
+        try:
+            history = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+        except:
+            history = []
+    else:
+        history = []
+        
+    history.append({
+        "product_name": product_name,
+        "country": country,
+        "score": score,
+        "decision": decision,
+        "recommendation": recommendation,
+        "created_at": datetime.utcnow().isoformat()
+    })
+    HISTORY_FILE.write_text(
+        json.dumps(history, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
+@app.get("/analyze")
+async def analyze(product: str, country: str = "Jordan"):
+    try:
+        print(f"DEBUG | Scanning: {product}")
+        result = run_full_scan(product, country, "General")
+        return {
+            "status": "success", 
+            "product": product, 
+            "result": result
+        }
+    except Exception as e:
+        print(f"ANALYZE FALLBACK | Error: {e}")
+        # نظام الإنقاذ: يحفظ المنتج حتى لو فشل المحرك التقني
+        score = 60 
+        decision = "PROMISING (Fallback)"
+        recommendation = "Analysis engine busy. Item saved for manual review."
+        
+        save_simple_history(product, country, score, decision, recommendation)
+        
+        return {
+            "status": "fallback",
+            "product": product,
+            "score": score,
+            "message": str(e)
+        }

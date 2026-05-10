@@ -1,0 +1,35 @@
+[
+  {
+    "clean_product_name": "American Tourister Accessories Travel Bag Dumyah",
+    "avg_price_jod": 19.0,
+    "min_price_jod": 19.0,
+    "max_price_jod": 19.0,
+    "competitor_count": 1,
+    "source_links": [
+      "https://www.dumyah.com/en/home/luggages-and-accessories/american-tourister-accessories-travel-bag"
+    ],
+    "market": "Jordan"
+  },
+  {
+    "clean_product_name": "Kitchen Tools & Gadgets",
+    "avg_price_jod": 20.0,
+    "min_price_jod": 20.0,
+    "max_price_jod": 20.0,
+    "competitor_count": 1,
+    "source_links": [
+      "https://jo-cell.com/collections/kitchen-tools"
+    ],
+    "market": "Jordan"
+  },
+  {
+    "clean_product_name": "Kitchen Essentials",
+    "avg_price_jod": 10.0,
+    "min_price_jod": 10.0,
+    "max_price_jod": 10.0,
+    "competitor_count": 1,
+    "source_links": [
+      "https://kharmaco.com/en/kitchen-supplies-mixers-hoods-jordan-from-kharma-online-store"
+    ],
+    "market": "Jordan"
+  }
+]
