@@ -4,6 +4,15 @@ plugins {
 }
 
 android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
     namespace 'com.ultraai.hunter'
     compileSdk 35
 
@@ -19,4 +28,9 @@ android {
 dependencies {
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
+}
+
+
+kotlin {
+    jvmToolchain(17)
 }
