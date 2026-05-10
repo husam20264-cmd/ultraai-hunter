@@ -12,6 +12,13 @@ from pdf_report_generator import generate_investment_report
 from hunter_routes import router as hunter_router
 from auth_system import auth_router
 app = FastAPI()
+
+from fastapi.staticfiles import StaticFiles
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+from pathlib import Path
+Path("ad_images").mkdir(exist_ok=True)
+app.mount("/ad_images", StaticFiles(directory="ad_images"), name="ad_images")
 app.include_router(auth_router)
 
 from secure_api import secure_router
